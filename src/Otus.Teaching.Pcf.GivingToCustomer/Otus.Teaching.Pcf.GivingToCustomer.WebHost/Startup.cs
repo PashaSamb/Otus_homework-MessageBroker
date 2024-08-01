@@ -66,7 +66,7 @@ namespace Otus.Teaching.Pcf.GivingToCustomer.WebHost
             }
 
             app.UseOpenApi();
-            app.UseSwaggerUi3(x =>
+            app.UseSwaggerUi(x =>
             {
                 x.DocExpansion = "list";
             });

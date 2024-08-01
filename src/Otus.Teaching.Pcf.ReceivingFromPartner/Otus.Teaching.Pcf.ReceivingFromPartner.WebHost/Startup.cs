@@ -1,21 +1,16 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Castle.Core.Configuration;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.Http;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using Microsoft.Extensions.Configuration;
 using Otus.Teaching.Pcf.ReceivingFromPartner.Core.Abstractions.Gateways;
 using Otus.Teaching.Pcf.ReceivingFromPartner.Core.Abstractions.Repositories;
 using Otus.Teaching.Pcf.ReceivingFromPartner.DataAccess;
 using Otus.Teaching.Pcf.ReceivingFromPartner.DataAccess.Data;
 using Otus.Teaching.Pcf.ReceivingFromPartner.DataAccess.Repositories;
 using Otus.Teaching.Pcf.ReceivingFromPartner.Integration;
+using System;
 using IConfiguration = Microsoft.Extensions.Configuration.IConfiguration;
 
 namespace Otus.Teaching.Pcf.ReceivingFromPartner.WebHost
@@ -36,6 +31,8 @@ namespace Otus.Teaching.Pcf.ReceivingFromPartner.WebHost
             services.AddControllers().AddMvcOptions(x=> 
                 x.SuppressAsyncSuffixInActionNames = false);
             services.AddScoped(typeof(IRepository<>), typeof(EfRepository<>));
+         
+
             services.AddScoped<INotificationGateway, NotificationGateway>();
             services.AddScoped<IDbInitializer, EfDbInitializer>();
 
@@ -77,7 +74,7 @@ namespace Otus.Teaching.Pcf.ReceivingFromPartner.WebHost
             }
 
             app.UseOpenApi();
-            app.UseSwaggerUi3(x =>
+            app.UseSwaggerUi(x =>
             {
                 x.DocExpansion = "list";
             });
