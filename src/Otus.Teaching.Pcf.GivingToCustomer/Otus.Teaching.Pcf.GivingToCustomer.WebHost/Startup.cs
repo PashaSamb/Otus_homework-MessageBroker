@@ -1,21 +1,18 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Castle.Core.Configuration;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.Http;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using Microsoft.Extensions.Configuration;
+using Otus.Pcf.RabbitMq;
 using Otus.Teaching.Pcf.GivingToCustomer.Core.Abstractions.Gateways;
 using Otus.Teaching.Pcf.GivingToCustomer.Core.Abstractions.Repositories;
+using Otus.Teaching.Pcf.GivingToCustomer.Core.Services;
 using Otus.Teaching.Pcf.GivingToCustomer.DataAccess;
 using Otus.Teaching.Pcf.GivingToCustomer.DataAccess.Data;
 using Otus.Teaching.Pcf.GivingToCustomer.DataAccess.Repositories;
 using Otus.Teaching.Pcf.GivingToCustomer.Integration;
+using Otus.Teaching.Pcf.GivingToCustomer.WebHost.HostedService;
 using IConfiguration = Microsoft.Extensions.Configuration.IConfiguration;
 
 namespace Otus.Teaching.Pcf.GivingToCustomer.WebHost
@@ -45,6 +42,12 @@ namespace Otus.Teaching.Pcf.GivingToCustomer.WebHost
                 x.UseSnakeCaseNamingConvention();
                 x.UseLazyLoadingProxies();
             });
+
+            services.AddScoped<GivePromoCodesToCustomersService>();
+
+            services.ConfigureRabbitServices(Configuration);
+
+            services.AddHostedService<GivingToCustomerQueueListener>();
 
             services.AddOpenApiDocument(options =>
             {

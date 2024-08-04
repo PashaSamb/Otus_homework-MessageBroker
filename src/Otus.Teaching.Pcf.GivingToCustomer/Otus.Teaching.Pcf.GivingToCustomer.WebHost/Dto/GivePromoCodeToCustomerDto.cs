@@ -1,16 +1,16 @@
-﻿using Otus.Teaching.Pcf.GivingToCustomer.Core.Abstractions;
-using System;
+﻿using System;
 
-namespace Otus.Teaching.Pcf.GivingToCustomer.WebHost.Models
+namespace Otus.Teaching.Pcf.GivingToCustomer.Dto
 {
-    public class GivePromoCodeRequest : IGivePromoCodeRequest
+    public class GivePromoCodeToCustomerDto
     {
+
         public string ServiceInfo { get; set; }
 
         public Guid PartnerId { get; set; }
 
         public Guid PromoCodeId { get; set; }
-        
+
         public string PromoCode { get; set; }
 
         public Guid PreferenceId { get; set; }
@@ -18,5 +18,7 @@ namespace Otus.Teaching.Pcf.GivingToCustomer.WebHost.Models
         public string BeginDate { get; set; }
 
         public string EndDate { get; set; }
+
+        public Guid? PartnerManagerId { get; set; }
     }
 }

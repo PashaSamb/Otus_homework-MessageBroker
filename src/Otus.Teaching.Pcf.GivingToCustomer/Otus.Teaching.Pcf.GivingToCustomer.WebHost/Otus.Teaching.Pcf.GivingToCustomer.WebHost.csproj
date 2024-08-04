@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk.Web">
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
 
     <PropertyGroup>
         <TargetFramework>net8.0</TargetFramework>
@@ -7,18 +7,21 @@
     </PropertyGroup>
 
     <ItemGroup>
+      <ProjectReference Include="..\..\Otus.Teaching.Pcf.ReceivingFromPartner\Otus.Teaching.Pcf.ReceivingFromPartner.Integration\Otus.Teaching.Pcf.ReceivingFromPartner.Integration.csproj" />
       <ProjectReference Include="..\Otus.Teaching.Pcf.GivingToCustomer.Core\Otus.Teaching.Pcf.GivingToCustomer.Core.csproj" />
       <ProjectReference Include="..\Otus.Teaching.Pcf.GivingToCustomer.DataAccess\Otus.Teaching.Pcf.GivingToCustomer.DataAccess.csproj" />
       <ProjectReference Include="..\Otus.Teaching.Pcf.GivingToCustomer.Integration\Otus.Teaching.Pcf.GivingToCustomer.Integration.csproj" />
     </ItemGroup>
 
-    <ItemGroup>
-      <PackageReference Include="EFCore.NamingConventions" Version="8.0.3" />
-      <PackageReference Include="Microsoft.EntityFrameworkCore" Version="8.0.7" />
-      <PackageReference Include="Microsoft.EntityFrameworkCore.Proxies" Version="8.0.7" />
-      <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="8.0.7" />
-      <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="8.0.4" />
-      <PackageReference Include="NSwag.AspNetCore" Version="14.1.0" />
-    </ItemGroup>
-
+	<ItemGroup>
+		<PackageReference Include="EFCore.NamingConventions" Version="8.0.3" />
+		<PackageReference Include="Microsoft.EntityFrameworkCore" Version="8.0.7" />
+		<PackageReference Include="Microsoft.EntityFrameworkCore.Proxies" Version="8.0.7" />
+		<PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="8.0.7" />
+		<PackageReference Include="Microsoft.Extensions.Configuration.Abstractions" Version="8.0.0" />
+		<PackageReference Include="Microsoft.Extensions.Hosting.Abstractions" Version="8.0.0" />
+		<PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.21.0" />
+		<PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="8.0.4" />
+		<PackageReference Include="NSwag.AspNetCore" Version="14.1.0" />
+	</ItemGroup>
 </Project>

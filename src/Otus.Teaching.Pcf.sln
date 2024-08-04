@@ -37,6 +37,10 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Otus.Teaching.Pcf.Receiving
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Otus.Teaching.Pcf.Administration.IntegrationTests", "Otus.Teaching.Pcf.Administration\Otus.Teaching.Pcf.Administration.IntegrationTests\Otus.Teaching.Pcf.Administration.IntegrationTests.csproj", "{38F1FFB6-5EBF-4EDF-B74E-AF29B0F1ABF7}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Broker", "Broker", "{71FA88EF-F9F9-4DE8-A7B4-6C1D8C18CBEE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Otus.Pcf.RabbitMq", "Otus.RabbitMq\Otus.Pcf.RabbitMq.csproj", "{91FD5F7E-7564-458C-8B65-6842E1366BAC}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -99,6 +103,10 @@ Global
 		{38F1FFB6-5EBF-4EDF-B74E-AF29B0F1ABF7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{38F1FFB6-5EBF-4EDF-B74E-AF29B0F1ABF7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{38F1FFB6-5EBF-4EDF-B74E-AF29B0F1ABF7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{91FD5F7E-7564-458C-8B65-6842E1366BAC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{91FD5F7E-7564-458C-8B65-6842E1366BAC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{91FD5F7E-7564-458C-8B65-6842E1366BAC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{91FD5F7E-7564-458C-8B65-6842E1366BAC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -118,6 +126,7 @@ Global
 		{9CA552AE-FAAA-40B5-BC89-040F041CA48E} = {45AAAE31-1D5D-400B-ADAA-DE16D7B95BD5}
 		{3C4538FC-B200-4DC1-B278-DE43800B0BE3} = {45AAAE31-1D5D-400B-ADAA-DE16D7B95BD5}
 		{38F1FFB6-5EBF-4EDF-B74E-AF29B0F1ABF7} = {92A39EB2-4342-42A8-A30F-36DB3B5D2C95}
+		{91FD5F7E-7564-458C-8B65-6842E1366BAC} = {71FA88EF-F9F9-4DE8-A7B4-6C1D8C18CBEE}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {FD57647E-5C33-45E5-B39D-915B62321B41}
