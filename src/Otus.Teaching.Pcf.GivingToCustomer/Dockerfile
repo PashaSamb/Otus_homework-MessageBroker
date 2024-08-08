@@ -1,12 +1,10 @@
 FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
 WORKDIR /app
 
-# Add these lines for debugging
-RUN apt-get update && apt-get install -y iputils-ping
-RUN ping -c 4 api.nuget.org
-RUN cat /etc/resolv.conf
+COPY "nugets/" "/app/nugets/"
+RUN dotnet nuget add source /app/nugets/
 
-# Copy NuGet.config if you have one
+# Copy NuGet.config
 COPY NuGet.config .
 
 # copy csproj and restore as distinct layers

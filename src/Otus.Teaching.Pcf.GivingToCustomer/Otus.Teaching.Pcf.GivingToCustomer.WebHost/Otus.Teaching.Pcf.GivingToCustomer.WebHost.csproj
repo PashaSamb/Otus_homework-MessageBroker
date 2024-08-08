@@ -7,7 +7,6 @@
     </PropertyGroup>
 
     <ItemGroup>
-      <ProjectReference Include="..\..\Otus.Teaching.Pcf.ReceivingFromPartner\Otus.Teaching.Pcf.ReceivingFromPartner.Integration\Otus.Teaching.Pcf.ReceivingFromPartner.Integration.csproj" />
       <ProjectReference Include="..\Otus.Teaching.Pcf.GivingToCustomer.Core\Otus.Teaching.Pcf.GivingToCustomer.Core.csproj" />
       <ProjectReference Include="..\Otus.Teaching.Pcf.GivingToCustomer.DataAccess\Otus.Teaching.Pcf.GivingToCustomer.DataAccess.csproj" />
       <ProjectReference Include="..\Otus.Teaching.Pcf.GivingToCustomer.Integration\Otus.Teaching.Pcf.GivingToCustomer.Integration.csproj" />
@@ -23,5 +22,6 @@
 		<PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.21.0" />
 		<PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="8.0.4" />
 		<PackageReference Include="NSwag.AspNetCore" Version="14.1.0" />
+		<PackageReference Include="Otus.Pcf.RabbitMq" Version="1.0.0" />
 	</ItemGroup>
 </Project>

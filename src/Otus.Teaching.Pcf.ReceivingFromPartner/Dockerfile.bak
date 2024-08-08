@@ -1,8 +1,8 @@
 FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
 WORKDIR /app
 
-COPY "nugets/" "/app/nugets/"
-RUN dotnet nuget add source /app/nugets/
+COPY "nugets/" "/var/nugets/"
+RUN dotnet nuget add source /var/nugets/
 
 # Copy NuGet.config
 COPY NuGet.config .
@@ -23,4 +23,4 @@ RUN dotnet publish -c Release -o out
 FROM mcr.microsoft.com/dotnet/aspnet:8.0 AS runtime
 WORKDIR /app
 COPY --from=build /app/aspnetapp/out ./
-ENTRYPOINT ["dotnet", "Otus.Teaching.Pcf.Administration.WebHost.dll"]
+ENTRYPOINT ["dotnet", "Otus.Teaching.Pcf.ReceivingFromPartner.WebHost.dll"]

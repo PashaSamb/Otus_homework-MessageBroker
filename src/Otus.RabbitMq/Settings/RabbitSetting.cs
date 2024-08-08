@@ -22,7 +22,7 @@ namespace Otus.RabbitMq.Settings
         /// <summary>
         /// Сервер
         /// </summary>
-        public string HostName { get; set; } = "localhost";
+        public string Host { get; set; } = "localhost";
 
         /// <summary>
         /// Виртуальный хост
@@ -32,7 +32,7 @@ namespace Otus.RabbitMq.Settings
         /// <summary>
         /// Порт
         /// </summary>
-        public int? Port { get; set; } = -1;
+        public int Port { get; set; } = 5672;
 
         /// <summary>
         /// Максимальное количество каналов, которое будет хранится в пуле

@@ -12,10 +12,10 @@
   </PropertyGroup>
 	
   <Target Name="CopyPackage" AfterTargets="Pack">
-		<Copy SourceFiles="$(OutputPath)..\$(PackageId).$(PackageVersion).nupkg" DestinationFolder="..\..\Otus.Teaching.Pcf.ReceivingFromPartner\nuget" />
-		<Copy SourceFiles="$(OutputPath)..\$(PackageId).$(PackageVersion).nupkg" DestinationFolder="..\..\Otus.Teaching.Pcf.GivingToCustomer\nuget" />
-		<Copy SourceFiles="$(OutputPath)..\$(PackageId).$(PackageVersion).nupkg" DestinationFolder="..\..\Otus.Teaching.Pcf.Administration\nuget" />
-		<Copy SourceFiles="$(OutputPath)..\$(PackageId).$(PackageVersion).nupkg" DestinationFolder="..\..\nuget" />
+		<Copy SourceFiles="$(OutputPath)..\$(PackageId).$(PackageVersion).nupkg" DestinationFolder="..\..\src\Otus.Teaching.Pcf.ReceivingFromPartner\nugets" />
+		<Copy SourceFiles="$(OutputPath)..\$(PackageId).$(PackageVersion).nupkg" DestinationFolder="..\..\src\Otus.Teaching.Pcf.GivingToCustomer\nugets" />
+		<Copy SourceFiles="$(OutputPath)..\$(PackageId).$(PackageVersion).nupkg" DestinationFolder="..\..\src\Otus.Teaching.Pcf.Administration\nugets" />
+		<Copy SourceFiles="$(OutputPath)..\$(PackageId).$(PackageVersion).nupkg" DestinationFolder="..\..\nugets" />
    </Target>
 	
   <ItemGroup>

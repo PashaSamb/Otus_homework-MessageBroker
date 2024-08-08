@@ -12,9 +12,10 @@ namespace Otus.Pcf.RabbitMq
         {
             services.AddOptions();
 
-            services.Configure<RabbitSetting>(options=> configuration.GetSection(nameof(RabbitSetting)));
-            services.Configure<QueueSetting>(options => configuration.GetSection(nameof(QueueSetting)));
-            services.Configure<QueueListenerSetting>(options => configuration.GetSection(nameof(QueueListenerSetting)));
+            services.Configure<RabbitSetting>(configuration.GetSection(nameof(RabbitSetting)));
+            services.Configure<QueueSetting>(configuration.GetSection(nameof(QueueSetting)));
+            services.Configure<QueueListenerSetting>(configuration.GetSection(nameof(QueueListenerSetting)));
+
 
             services.AddSingleton<IRabbitManager, RabbitManager>();
             services.AddSingleton<IQueueReceiver, QueueReceiver>();
